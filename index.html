@@ -415,6 +415,125 @@
       transform: translateY(0);
     }
 
+    /* CHATBOT */
+    .chatbot-toggle {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 64px;
+      height: 64px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c2ff, #7a5cff);
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      box-shadow: 0 14px 35px rgba(0, 194, 255, 0.35);
+      z-index: 1001;
+    }
+
+    .chatbot-box {
+      position: fixed;
+      right: 24px;
+      bottom: 100px;
+      width: 360px;
+      max-width: calc(100% - 32px);
+      height: 500px;
+      background: rgba(8, 17, 32, 0.96);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+      backdrop-filter: blur(16px);
+    }
+
+    .chatbot-box.active {
+      display: flex;
+    }
+
+    .chatbot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      background: linear-gradient(135deg, rgba(0,194,255,0.18), rgba(122,92,255,0.18));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .chatbot-header h3 {
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .chatbot-close {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .chatbot-messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chatbot-message {
+      max-width: 85%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .bot-message {
+      background: rgba(255,255,255,0.07);
+      color: #eaf1ff;
+      align-self: flex-start;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .user-message {
+      background: linear-gradient(135deg, #00c2ff, #7a5cff);
+      color: #fff;
+      align-self: flex-end;
+    }
+
+    .chatbot-input-wrap {
+      display: flex;
+      gap: 10px;
+      padding: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .chatbot-input {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      outline: none;
+    }
+
+    .chatbot-send {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #00c2ff, #7a5cff);
+      cursor: pointer;
+    }
+
     @media (max-width: 1024px) {
       .hero-wrap,
       .why-wrap,
@@ -447,6 +566,18 @@
 
       .nav-links {
         justify-content: center;
+      }
+
+      .chatbot-box {
+        right: 16px;
+        bottom: 90px;
+        width: calc(100% - 32px);
+        height: 460px;
+      }
+
+      .chatbot-toggle {
+        right: 16px;
+        bottom: 16px;
       }
     }
   </style>
@@ -669,37 +800,37 @@
     <div class="grid-3">
       <div class="card reveal">
         <h3>The Rise of AI in Digital Marketing</h3>
-        <p></strong> Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
+        <p>Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
       </div>
 
       <div class="card reveal">
         <h3>AI-Powered Personalization</h3>
-        <p></strong> Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
+        <p>Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
       </div>
 
       <div class="card reveal">
         <h3>Chatbots and Virtual Assistants</h3>
-        <p></strong> Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
+        <p>Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
       </div>
 
       <div class="card reveal">
         <h3>Predictive Analytics and Campaign Optimization</h3>
-        <p></strong> See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
+        <p>See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
       </div>
 
       <div class="card reveal">
         <h3>Programmatic Advertising</h3>
-        <p></strong> Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
+        <p>Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
       </div>
 
       <div class="card reveal">
         <h3>Generative AI for Content Creation</h3>
-        <p></strong> Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
+        <p>Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
       </div>
 
       <div class="card reveal">
         <h3>The Future of AI in Marketing</h3>
-        <p></strong> Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
+        <p>Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
       </div>
     </div>
   </div>
@@ -711,6 +842,35 @@
       ©2026 Switflow Automation. All rights reserved.
     </div>
   </footer>
+
+  <!-- CHATBOT -->
+  <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+
+  <div class="chatbot-box" id="chatbotBox">
+    <div class="chatbot-header">
+      <h3>SwiftFlow Assistant</h3>
+      <button class="chatbot-close" id="chatbotClose">✕</button>
+    </div>
+
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="chatbot-message bot-message">
+        Hi! Welcome to SwiftFlow. How can I help you today?
+      </div>
+      <div class="chatbot-message bot-message">
+        You can ask about our AI chat agents, booking automation, CRM integration, or lead follow-up systems.
+      </div>
+    </div>
+
+    <div class="chatbot-input-wrap">
+      <input
+        type="text"
+        class="chatbot-input"
+        id="chatInput"
+        placeholder="Type your message..."
+      />
+      <button class="chatbot-send" id="chatSend">Send</button>
+    </div>
+  </div>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
@@ -728,6 +888,80 @@
 
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
+
+    // CHATBOT
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotBox = document.getElementById('chatbotBox');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+
+    chatbotToggle.addEventListener('click', () => {
+      chatbotBox.classList.toggle('active');
+    });
+
+    chatbotClose.addEventListener('click', () => {
+      chatbotBox.classList.remove('active');
+    });
+
+    function addMessage(message, type) {
+      const msg = document.createElement('div');
+      msg.className = `chatbot-message ${type}`;
+      msg.textContent = message;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getBotReply(text) {
+      const msg = text.toLowerCase();
+
+      if (msg.includes('hello') || msg.includes('hi')) {
+        return 'Hello! How can SwiftFlow help your business today?';
+      }
+
+      if (msg.includes('services') || msg.includes('what do you offer')) {
+        return 'We offer AI chat agents, appointment booking automation, workflow automation, lead follow-up systems, custom AI solutions, and CRM/data integration.';
+      }
+
+      if (msg.includes('chatbot') || msg.includes('ai agent')) {
+        return 'Our AI chat agents can work on WhatsApp, Telegram, Messenger, and websites to answer inquiries, collect leads, and assist customers 24/7.';
+      }
+
+      if (msg.includes('book') || msg.includes('appointment') || msg.includes('demo')) {
+        return 'Great choice. You can click "Book a Demo" in the navigation, or tell us your preferred date and business needs.';
+      }
+
+      if (msg.includes('price') || msg.includes('cost')) {
+        return 'Pricing depends on the workflow, platforms, and integrations you need. You can book a demo for a custom quote.';
+      }
+
+      if (msg.includes('crm') || msg.includes('google sheets') || msg.includes('integration')) {
+        return 'Yes, SwiftFlow can connect your chatbot or workflow to CRM systems, Google Sheets, email, and internal tools.';
+      }
+
+      return 'Thanks for your message. SwiftFlow helps automate support, lead capture, appointment booking, follow-ups, and business workflows.';
+    }
+
+    function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      addMessage(text, 'user-message');
+      chatInput.value = '';
+
+      setTimeout(() => {
+        addMessage(getBotReply(text), 'bot-message');
+      }, 500);
+    }
+
+    chatSend.addEventListener('click', sendMessage);
+
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
   </script>
 </body>
 </html>
