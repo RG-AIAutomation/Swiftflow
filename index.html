@@ -31,7 +31,6 @@
       margin: auto;
     }
 
-    /* Background */
     body::before {
       content: "";
       position: fixed;
@@ -56,7 +55,6 @@
       pointer-events: none;
     }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -131,7 +129,6 @@
       transform: translateY(-2px);
     }
 
-    /* Hero */
     .hero {
       padding: 90px 0 70px;
     }
@@ -253,7 +250,6 @@
       margin-bottom: 4px;
     }
 
-    /* Sections */
     section {
       padding: 78px 0;
     }
@@ -271,7 +267,6 @@
       margin: 0 auto 42px;
     }
 
-    /* Cards */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -314,7 +309,6 @@
       font-size: 0.96rem;
     }
 
-    /* Why us */
     .why-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -348,7 +342,6 @@
       font-weight: bold;
     }
 
-    /* Process */
     .process {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -379,7 +372,6 @@
       font-size: 0.95rem;
     }
 
-    /* CTA */
     .cta {
       text-align: center;
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
@@ -400,7 +392,6 @@
       margin: 0 auto 24px;
     }
 
-    /* Footer */
     footer {
       padding: 28px 0 40px;
       text-align: center;
@@ -413,7 +404,6 @@
       font-weight: 700;
     }
 
-    /* Reveal animation */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -425,7 +415,6 @@
       transform: translateY(0);
     }
 
-    /* Responsive */
     @media (max-width: 1024px) {
       .hero-wrap,
       .why-wrap,
@@ -471,6 +460,7 @@
         <a href="#services">Services</a>
         <a href="#benefits">Benefits</a>
         <a href="#process">Process</a>
+        <a href="#blog">Blog</a>
         <a href="#contact" class="btn btn-primary">Book a Demo</a>
       </nav>
     </div>
@@ -669,18 +659,58 @@
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="cta reveal">
-          <h2>Ready to automate your business with AI?</h2>
-          <p>
-            SwiftFlow builds AI automation agents that help you respond faster, capture more leads,
-            and streamline your operations. Let’s create a system that works for your business.
-          </p>
-          <a href="mailto:your@email.com" class="btn btn-primary">Book Your Free Consultation</a>
-        </div>
+<section id="blog">
+  <div class="container">
+    <h2 class="section-title reveal">Blog</h2>
+    <p class="section-sub reveal">
+      Insights and strategies on AI automation and digital marketing.
+    </p>
+
+    <div class="grid-3">
+      <div class="card reveal">
+        <h3>The Rise of AI in Digital Marketing</h3>
+        <p><strong>SEO Title:</strong> The Rise of AI in Digital Marketing: Smarter Campaigns in 2026</p>
+        <p><strong>Meta Description:</strong> Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
       </div>
-    </section>
+
+      <div class="card reveal">
+        <h3>AI-Powered Personalization</h3>
+        <p><strong>SEO Title:</strong> AI-Powered Personalization: How Automation Creates Tailored Customer Experiences</p>
+        <p><strong>Meta Description:</strong> Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Chatbots and Virtual Assistants</h3>
+        <p><strong>SEO Title:</strong> Chatbots in Digital Marketing: AI Automation for Customer Engagement</p>
+        <p><strong>Meta Description:</strong> Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Predictive Analytics and Campaign Optimization</h3>
+        <p><strong>SEO Title:</strong> Predictive Analytics in Digital Marketing: AI Insights for Smarter Campaigns</p>
+        <p><strong>Meta Description:</strong> See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Programmatic Advertising</h3>
+        <p><strong>SEO Title:</strong> Programmatic Advertising: AI Automation for Real-Time Ad Targeting</p>
+        <p><strong>Meta Description:</strong> Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Generative AI for Content Creation</h3>
+        <p><strong>SEO Title:</strong> Generative AI in Marketing: Automating Content Creation Without Losing Authenticity</p>
+        <p><strong>Meta Description:</strong> Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>The Future of AI in Marketing</h3>
+        <p><strong>SEO Title:</strong> The Future of AI in Digital Marketing: Trends to Watch in 2026 and Beyond</p>
+        <p><strong>Meta Description:</strong> Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
+      </div>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer>
