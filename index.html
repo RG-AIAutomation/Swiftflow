@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftFlow | AI Automation Agent Services</title>
+  <meta name="description" content="SwiftFlow helps businesses automate customer support, lead capture, appointment booking, and follow-ups with AI automation agents." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #081120;
+      color: #f5f7fb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* Background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.18), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(138, 92, 246, 0.18), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(0, 255, 170, 0.10), transparent 25%),
+        linear-gradient(135deg, #081120 0%, #0c1730 45%, #09101d 100%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8, 17, 32, 0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #00c2ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #d7e4ff;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00c2ff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00c2ff, #7a5cff);
+      color: white;
+      box-shadow: 0 10px 30px rgba(0, 194, 255, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(0, 194, 255, 0.35);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #eaf1ff;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(0,194,255,0.35);
+      background: rgba(0,194,255,0.08);
+      color: #8be7ff;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #00c2ff, #8f6bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 1.08rem;
+      color: #b9c8e4;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 18px;
+      border-radius: 16px;
+      min-width: 150px;
+    }
+
+    .stat h3 {
+      font-size: 1.4rem;
+      color: #ffffff;
+    }
+
+    .stat p {
+      font-size: 0.9rem;
+      color: #9fb1d3;
+      margin: 0;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(0,194,255,0.18);
+      top: -80px;
+      right: -80px;
+      filter: blur(10px);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+
+    .flow-box {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .flow-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 16px;
+      border-radius: 16px;
+      color: #dfe8f9;
+    }
+
+    .flow-item strong {
+      color: #00d1ff;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Sections */
+    section {
+      padding: 78px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #aab9d5;
+      max-width: 720px;
+      margin: 0 auto 42px;
+    }
+
+    /* Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 26px;
+      transition: 0.3s ease;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,194,255,0.25);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(0,194,255,0.2), rgba(122,92,255,0.2));
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      color: #b9c8e4;
+      font-size: 0.96rem;
+    }
+
+    /* Why us */
+    .why-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .why-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .why-box ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .why-box li {
+      color: #dbe7fb;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .why-box li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00d1ff;
+      font-weight: bold;
+    }
+
+    /* Process */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00c2ff, #7a5cff);
+      margin-bottom: 16px;
+    }
+
+    .step p {
+      color: #b9c8e4;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 30px;
+      padding: 50px 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      color: #b9c8e4;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 28px 0 40px;
+      text-align: center;
+      color: #8ea0c2;
+      font-size: 0.95rem;
+    }
+
+    footer span {
+      color: #00c2ff;
+      font-weight: 700;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-wrap,
+      .why-wrap,
+      .grid-3,
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .hero-wrap,
+      .why-wrap,
+      .grid-3,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Swift<span>Flow</span></div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn btn-primary">Book a Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="reveal">
+          <div class="badge">AI Automation Agent Services</div>
+          <h1>We build <span>AI automation agents</span> that work for your business 24/7.</h1>
+          <p>
+            SwiftFlow helps businesses automate customer support, lead capture, appointment booking,
+            follow-ups, and repetitive tasks using smart AI automation systems for WhatsApp, Messenger,
+            Telegram, websites, and CRM workflows.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get Started</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <h3>24/7</h3>
+              <p>Always-on AI response</p>
+            </div>
+            <div class="stat">
+              <h3>Fast</h3>
+              <p>Automated lead handling</p>
+            </div>
+            <div class="stat">
+              <h3>Smart</h3>
+              <p>AI-powered workflows</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <h3>How SwiftFlow works</h3>
+          <div class="flow-box">
+            <div class="flow-item">
+              <strong>Capture</strong>
+              Collect leads from chat, forms, and social platforms automatically.
+            </div>
+            <div class="flow-item">
+              <strong>Respond</strong>
+              AI replies instantly to inquiries and qualifies prospects.
+            </div>
+            <div class="flow-item">
+              <strong>Book</strong>
+              Schedule appointments and collect customer details without manual work.
+            </div>
+            <div class="flow-item">
+              <strong>Automate</strong>
+              Sync data to CRM, Google Sheets, email, or your internal system.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title reveal">Our Services</h2>
+        <p class="section-sub reveal">
+          We design practical AI automation systems that reduce manual work, speed up response time,
+          and help your business convert more leads.
+        </p>
+
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="card-icon">🤖</div>
+            <h3>AI Chat Agents</h3>
+            <p>
+              Deploy AI agents for WhatsApp, Telegram, Messenger, or websites to answer questions,
+              guide customers, and collect lead information automatically.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">📅</div>
+            <h3>Appointment Booking Automation</h3>
+            <p>
+              Let customers book appointments instantly while your system gathers names, phone numbers,
+              emails, preferred dates, and service requests.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">⚡</div>
+            <h3>Workflow Automation</h3>
+            <p>
+              Connect forms, chats, CRM, email, Google Sheets, and internal processes so data flows
+              automatically without repetitive manual entry.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">📩</div>
+            <h3>Lead Follow-Up Systems</h3>
+            <p>
+              Automate follow-ups through email, chat, or messaging platforms so no lead is forgotten
+              and every inquiry gets a fast response.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">🧠</div>
+            <h3>Custom AI Solutions</h3>
+            <p>
+              Build tailored automation for your business model, whether you need customer service,
+              sales qualification, reminders, onboarding, or internal task handling.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">📊</div>
+            <h3>Data & CRM Integration</h3>
+            <p>
+              Automatically send captured customer data into Google Sheets, CRM platforms, or your
+              preferred database for organized tracking and better decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <h2 class="section-title reveal">Why Businesses Choose SwiftFlow</h2>
+        <p class="section-sub reveal">
+          We focus on automation that is simple, useful, and built to create real business impact.
+        </p>
+
+        <div class="why-wrap">
+          <div class="why-box reveal">
+            <h3 style="margin-bottom: 18px;">What you get</h3>
+            <ul>
+              <li>Faster customer response times</li>
+              <li>Less manual admin work</li>
+              <li>Better lead capture and follow-up</li>
+              <li>More consistent customer experience</li>
+              <li>Automated appointment scheduling</li>
+              <li>Centralized business data collection</li>
+            </ul>
+          </div>
+
+          <div class="why-box reveal">
+            <h3 style="margin-bottom: 18px;">Built for growth</h3>
+            <ul>
+              <li>Works 24/7 without breaks</li>
+              <li>Scales with your business volume</li>
+              <li>Reduces missed inquiries and lost leads</li>
+              <li>Improves operational efficiency</li>
+              <li>Customizable for different industries</li>
+              <li>Designed for practical everyday use</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <h2 class="section-title reveal">Our Process</h2>
+        <p class="section-sub reveal">
+          From idea to launch, we build your AI automation system in a clear and simple way.
+        </p>
+
+        <div class="process">
+          <div class="step reveal">
+            <div class="step-number">1</div>
+            <h3>Discover</h3>
+            <p>We learn your workflow, identify bottlenecks, and understand what should be automated.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">2</div>
+            <h3>Design</h3>
+            <p>We map the user journey, conversation flow, integrations, and automation logic.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">3</div>
+            <h3>Build</h3>
+            <p>We create your AI agent, connect platforms, and test each workflow for reliability.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">4</div>
+            <h3>Launch</h3>
+            <p>Your automation goes live, ready to capture leads, respond to customers, and save time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Ready to automate your business with AI?</h2>
+          <p>
+            SwiftFlow builds AI automation agents that help you respond faster, capture more leads,
+            and streamline your operations. Let’s create a system that works for your business.
+          </p>
+          <a href="mailto:your@email.com" class="btn btn-primary">Book Your Free Consultation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Crafted for <span>SwiftFlow</span> — AI automation agent solutions built for speed, scale, and smarter workflows.
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function showOnScroll() {
+      const triggerBottom = window.innerHeight * 0.88;
+
+      reveals.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          item.classList.add('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+</body>
+</html>
