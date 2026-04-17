@@ -15,19 +15,21 @@
 }
 
 body {
-  margin: 0;
   background-color: #081120;
-
-  background-image: url("background.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: auto;
-
-  min-height: 100vh;
-
   color: #f5f7fb;
   line-height: 1.6;
   overflow-x: hidden;
+}
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
     a {
       text-decoration: none;
@@ -578,6 +580,7 @@ body::before {
   </style>
 </head>
 <body>
+  <img src="background.png" class="bg-image" />
 
   <header>
     <div class="container nav">
