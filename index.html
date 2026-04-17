@@ -3,16 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SwiftFlow | AI Automation Agent Services</title>
-  <meta name="description" content="SwiftFlow helps businesses automate customer support, lead capture, appointment booking, and follow-ups with AI automation agents." />
+  <title>SparkFluxx | AI Automation Agent Services</title>
+  <meta
+    name="description"
+    content="SparkFluxx helps businesses automate customer support, lead capture, appointment booking, and follow-ups with AI automation agents."
+  />
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-      scroll-behavior: smooth;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
 
     body {
       background: #081120;
@@ -69,24 +83,28 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 0;
+      gap: 20px;
     }
 
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+}
 
-    .logo span {
-      color: #00c2ff;
-    }
+.logo-text span {
+  color: #00c2ff;
+}
 
     .nav-links {
       display: flex;
       gap: 24px;
       align-items: center;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a {
@@ -228,12 +246,16 @@
     .hero-card h3 {
       margin-bottom: 16px;
       font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
     }
 
     .flow-box {
       display: grid;
       gap: 14px;
       margin-top: 16px;
+      position: relative;
+      z-index: 1;
     }
 
     .flow-item {
@@ -372,36 +394,11 @@
       font-size: 0.95rem;
     }
 
-    .cta {
-      text-align: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 30px;
-      padding: 50px 28px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-    }
-
-    .cta h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 14px;
-    }
-
-    .cta p {
-      color: #b9c8e4;
-      max-width: 700px;
-      margin: 0 auto 24px;
-    }
-
     footer {
       padding: 28px 0 40px;
       text-align: center;
       color: #8ea0c2;
       font-size: 0.95rem;
-    }
-
-    footer span {
-      color: #00c2ff;
-      font-weight: 700;
     }
 
     .reveal {
@@ -415,7 +412,6 @@
       transform: translateY(0);
     }
 
-    /* CHATBOT */
     .chatbot-toggle {
       position: fixed;
       right: 24px;
@@ -586,13 +582,23 @@
 
   <header>
     <div class="container nav">
-      <div class="logo">Swift<span>Flow</span></div>
+<div class="logo">
+  <img src="sparkfluxx-logo.png.jpeg" alt="SparkFluxx Logo" class="logo-icon">
+  <span class="logo-text">Spark<span>Fluxx</span></span>
+</div>
+
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#benefits">Benefits</a>
         <a href="#process">Process</a>
         <a href="#blog">Blog</a>
-<a href="mailto:your@email.com?subject=Book%20a%20Demo%20-%20SwiftFlow&body=Hi%20SwiftFlow%2C%20I%20would%20like%20to%20book%20a%20demo.%20Here%20are%20my%20details%3A%0A%0AName%3A%0ABusiness%3A%0ANeeds%3A" class="btn btn-primary">Book a Demo</a>      </nav>
+        <a
+          href="mailto:your@email.com?subject=Book%20a%20Demo%20-%20SparkFluxx&body=Hi%20SparkFluxx%2C%20I%20would%20like%20to%20book%20a%20demo.%20Here%20are%20my%20details%3A%0A%0AName%3A%0ABusiness%3A%0ANeeds%3A"
+          class="btn btn-primary"
+        >
+          Book a Demo
+        </a>
+      </nav>
     </div>
   </header>
 
@@ -603,13 +609,19 @@
           <div class="badge">AI Automation Agent Services</div>
           <h1>We build <span>AI automation agents</span> that work for your business 24/7.</h1>
           <p>
-            SwiftFlow helps businesses automate customer support, lead capture, appointment booking,
+            SparkFluxx helps businesses automate customer support, lead capture, appointment booking,
             follow-ups, and repetitive tasks using smart AI automation systems for WhatsApp, Messenger,
             Telegram, websites, and CRM workflows.
           </p>
 
           <div class="hero-actions">
-<a href="mailto:your@email.com?subject=SwiftFlow%20Inquiry&body=Hi%20SwiftFlow%2C%20I%20want%20to%20get%20started%20with%20your%20AI%20automation%20services." class="btn btn-primary">Get Started</a>          </div>
+            <a
+              href="mailto:your@email.com?subject=SparkFluxx%20Inquiry&body=Hi%20SparkFluxx%2C%20I%20want%20to%20get%20started%20with%20your%20AI%20automation%20services."
+              class="btn btn-primary"
+            >
+              Get Started
+            </a>
+          </div>
 
           <div class="hero-stats">
             <div class="stat">
@@ -628,7 +640,7 @@
         </div>
 
         <div class="hero-card reveal">
-          <h3>How SwiftFlow works</h3>
+          <h3>How SparkFluxx works</h3>
           <div class="flow-box">
             <div class="flow-item">
               <strong>Capture</strong>
@@ -719,7 +731,7 @@
 
     <section id="benefits">
       <div class="container">
-        <h2 class="section-title reveal">Why Businesses Choose SwiftFlow</h2>
+        <h2 class="section-title reveal">Why Businesses Choose SparkFluxx</h2>
         <p class="section-sub reveal">
           We focus on automation that is simple, useful, and built to create real business impact.
         </p>
@@ -787,71 +799,70 @@
       </div>
     </section>
 
-<section id="blog">
-  <div class="container">
-    <h2 class="section-title reveal">Blog</h2>
-    <p class="section-sub reveal">
-      Insights and strategies on AI automation and digital marketing.
-    </p>
+    <section id="blog">
+      <div class="container">
+        <h2 class="section-title reveal">Blog</h2>
+        <p class="section-sub reveal">
+          Insights and strategies on AI automation and digital marketing.
+        </p>
 
-    <div class="grid-3">
-      <div class="card reveal">
-        <h3>The Rise of AI in Digital Marketing</h3>
-        <p>Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
-      </div>
+        <div class="grid-3">
+          <div class="card reveal">
+            <h3>The Rise of AI in Digital Marketing</h3>
+            <p>Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
+          </div>
 
-      <div class="card reveal">
-        <h3>AI-Powered Personalization</h3>
-        <p>Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
-      </div>
+          <div class="card reveal">
+            <h3>AI-Powered Personalization</h3>
+            <p>Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
+          </div>
 
-      <div class="card reveal">
-        <h3>Chatbots and Virtual Assistants</h3>
-        <p>Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
-      </div>
+          <div class="card reveal">
+            <h3>Chatbots and Virtual Assistants</h3>
+            <p>Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
+          </div>
 
-      <div class="card reveal">
-        <h3>Predictive Analytics and Campaign Optimization</h3>
-        <p>See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
-      </div>
+          <div class="card reveal">
+            <h3>Predictive Analytics and Campaign Optimization</h3>
+            <p>See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
+          </div>
 
-      <div class="card reveal">
-        <h3>Programmatic Advertising</h3>
-        <p>Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
-      </div>
+          <div class="card reveal">
+            <h3>Programmatic Advertising</h3>
+            <p>Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
+          </div>
 
-      <div class="card reveal">
-        <h3>Generative AI for Content Creation</h3>
-        <p>Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
-      </div>
+          <div class="card reveal">
+            <h3>Generative AI for Content Creation</h3>
+            <p>Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
+          </div>
 
-<div class="card reveal" style="text-align: center;">
-        <h3>The Future of AI in Marketing</h3>
-        <p>Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
+          <div class="card reveal" style="text-align: center;">
+            <h3>The Future of AI in Marketing</h3>
+            <p>Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   </main>
 
   <footer>
     <div class="container">
-      ©2026 Swiftflow Automation. All rights reserved.
+      ©2026 SparkFluxx Automation. All rights reserved.
     </div>
   </footer>
 
-  <!-- CHATBOT -->
   <button class="chatbot-toggle" id="chatbotToggle">💬</button>
 
   <div class="chatbot-box" id="chatbotBox">
     <div class="chatbot-header">
-      <h3>SwiftFlow Assistant</h3>
+      <h3>SparkFluxx Assistant</h3>
       <button class="chatbot-close" id="chatbotClose">✕</button>
     </div>
 
     <div class="chatbot-messages" id="chatMessages">
       <div class="chatbot-message bot-message">
-        Hi! Welcome to SwiftFlow. How can I help you today?
+        Hi! Welcome to SparkFluxx. How can I help you today?
       </div>
       <div class="chatbot-message bot-message">
         You can ask about our AI chat agents, booking automation, CRM integration, or lead follow-up systems.
@@ -886,7 +897,6 @@
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
 
-    // CHATBOT
     const chatbotToggle = document.getElementById('chatbotToggle');
     const chatbotBox = document.getElementById('chatbotBox');
     const chatbotClose = document.getElementById('chatbotClose');
@@ -914,7 +924,7 @@
       const msg = text.toLowerCase();
 
       if (msg.includes('hello') || msg.includes('hi')) {
-        return 'Hello! How can SwiftFlow help your business today?';
+        return 'Hello! How can SparkFluxx help your business today?';
       }
 
       if (msg.includes('services') || msg.includes('what do you offer')) {
@@ -934,10 +944,10 @@
       }
 
       if (msg.includes('crm') || msg.includes('google sheets') || msg.includes('integration')) {
-        return 'Yes, SwiftFlow can connect your chatbot or workflow to CRM systems, Google Sheets, email, and internal tools.';
+        return 'Yes, SparkFluxx can connect your chatbot or workflow to CRM systems, Google Sheets, email, and internal tools.';
       }
 
-      return 'Thanks for your message. SwiftFlow helps automate support, lead capture, appointment booking, follow-ups, and business workflows.';
+      return 'Thanks for your message. SparkFluxx helps automate support, lead capture, appointment booking, follow-ups, and business workflows.';
     }
 
     function sendMessage() {
