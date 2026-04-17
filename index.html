@@ -3,38 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SparkFluxx | AI Automation Agent Services</title>
-  <meta
-    name="description"
-    content="SparkFluxx helps businesses automate customer support, lead capture, appointment booking, and follow-ups with AI automation agents."
-  />
-
+<title>SparkFluxx AI | AI Automation Agent Services</title>
+  <meta name="description" content="SparkFluxx helps businesses automate customer support, lead capture, appointment booking, and follow-ups with AI automation agents." />
   <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+body {
+  background: url("background.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #f5f7fb;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
-
-.logo-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-    body {
-      background: #081120;
-      color: #f5f7fb;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
     a {
       text-decoration: none;
       color: inherit;
@@ -45,29 +31,16 @@
       margin: auto;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.18), transparent 25%),
-        radial-gradient(circle at 80% 30%, rgba(138, 92, 246, 0.18), transparent 25%),
-        radial-gradient(circle at 50% 80%, rgba(0, 255, 170, 0.10), transparent 25%),
-        linear-gradient(135deg, #081120 0%, #0c1730 45%, #09101d 100%);
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -1;
-      pointer-events: none;
-    }
+/*
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(...),
+    linear-gradient(...);
+}
+*/
 
     header {
       position: sticky;
@@ -83,28 +56,24 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 0;
-      gap: 20px;
     }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: white;
-}
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
 
-.logo-text span {
-  color: #00c2ff;
-}
+    .logo span {
+      color: #00c2ff;
+    }
 
     .nav-links {
       display: flex;
       gap: 24px;
       align-items: center;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .nav-links a {
@@ -246,16 +215,12 @@
     .hero-card h3 {
       margin-bottom: 16px;
       font-size: 1.4rem;
-      position: relative;
-      z-index: 1;
     }
 
     .flow-box {
       display: grid;
       gap: 14px;
       margin-top: 16px;
-      position: relative;
-      z-index: 1;
     }
 
     .flow-item {
@@ -394,11 +359,36 @@
       font-size: 0.95rem;
     }
 
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 30px;
+      padding: 50px 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      color: #b9c8e4;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
     footer {
       padding: 28px 0 40px;
       text-align: center;
       color: #8ea0c2;
       font-size: 0.95rem;
+    }
+
+    footer span {
+      color: #00c2ff;
+      font-weight: 700;
     }
 
     .reveal {
@@ -412,6 +402,7 @@
       transform: translateY(0);
     }
 
+    /* CHATBOT */
     .chatbot-toggle {
       position: fixed;
       right: 24px;
@@ -582,23 +573,13 @@
 
   <header>
     <div class="container nav">
-<div class="logo">
-  <img src="sparkfluxx-logo.png.jpeg" alt="SparkFluxx Logo" class="logo-icon">
-  <span class="logo-text">Spark<span>Fluxx</span></span>
-</div>
-
+      <div class="logo">SparkFluxx <span>AI</span></div>
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#benefits">Benefits</a>
         <a href="#process">Process</a>
         <a href="#blog">Blog</a>
-        <a
-          href="mailto:your@email.com?subject=Book%20a%20Demo%20-%20SparkFluxx&body=Hi%20SparkFluxx%2C%20I%20would%20like%20to%20book%20a%20demo.%20Here%20are%20my%20details%3A%0A%0AName%3A%0ABusiness%3A%0ANeeds%3A"
-          class="btn btn-primary"
-        >
-          Book a Demo
-        </a>
-      </nav>
+<a href="mailto:your@email.com?subject=Book%20a%20Demo%20-%SparkFluxx&body=Hi%SparkFluxx%2C%20I%20would%20like%20to%20book%20a%20demo.%20Here%20are%20my%20details%3A%0A%0AName%3A%0ABusiness%3A%0ANeeds%3A" class="btn btn-primary">Book a Demo</a>      </nav>
     </div>
   </header>
 
@@ -615,13 +596,7 @@
           </p>
 
           <div class="hero-actions">
-            <a
-              href="mailto:your@email.com?subject=SparkFluxx%20Inquiry&body=Hi%20SparkFluxx%2C%20I%20want%20to%20get%20started%20with%20your%20AI%20automation%20services."
-              class="btn btn-primary"
-            >
-              Get Started
-            </a>
-          </div>
+<a href="mailto:your@email.com?subject=SparkFluxx%20Inquiry&body=Hi%20SparkFluxx%2C%20I%20want%20to%20get%20started%20with%20your%20AI%20automation%20services." class="btn btn-primary">Get Started</a>          </div>
 
           <div class="hero-stats">
             <div class="stat">
@@ -799,51 +774,51 @@
       </div>
     </section>
 
-    <section id="blog">
-      <div class="container">
-        <h2 class="section-title reveal">Blog</h2>
-        <p class="section-sub reveal">
-          Insights and strategies on AI automation and digital marketing.
-        </p>
+<section id="blog">
+  <div class="container">
+    <h2 class="section-title reveal">Blog</h2>
+    <p class="section-sub reveal">
+      Insights and strategies on AI automation and digital marketing.
+    </p>
 
-        <div class="grid-3">
-          <div class="card reveal">
-            <h3>The Rise of AI in Digital Marketing</h3>
-            <p>Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>AI-Powered Personalization</h3>
-            <p>Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Chatbots and Virtual Assistants</h3>
-            <p>Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Predictive Analytics and Campaign Optimization</h3>
-            <p>See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Programmatic Advertising</h3>
-            <p>Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Generative AI for Content Creation</h3>
-            <p>Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
-          </div>
-
-          <div class="card reveal" style="text-align: center;">
-            <h3>The Future of AI in Marketing</h3>
-            <p>Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
-          </div>
-        </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <h3>The Rise of AI in Digital Marketing</h3>
+        <p>Discover how AI automation is transforming digital marketing in 2026, from personalization to predictive analytics.</p>
       </div>
-    </section>
+
+      <div class="card reveal">
+        <h3>AI-Powered Personalization</h3>
+        <p>Learn how AI delivers hyper-personalized marketing campaigns through recommendation engines, dynamic content, and email segmentation.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Chatbots and Virtual Assistants</h3>
+        <p>Explore how AI chatbots and virtual assistants improve customer service, reduce costs, and boost satisfaction.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Predictive Analytics and Campaign Optimization</h3>
+        <p>See how AI predictive analytics optimize ad spend, forecast customer behavior, and identify high-value leads.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Programmatic Advertising</h3>
+        <p>Understand how AI-driven programmatic advertising automates ad buying, improves targeting, and maximizes ROI.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Generative AI for Content Creation</h3>
+        <p>Discover how generative AI creates blogs, social posts, and visuals while balancing automation with human creativity.</p>
+      </div>
+
+<div class="card reveal" style="text-align: center;">
+        <h3>The Future of AI in Marketing</h3>
+        <p>Explore emerging AI trends like emotion AI, voice search, and privacy-first automation shaping the future of marketing.</p>
+      </div>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer>
@@ -852,11 +827,12 @@
     </div>
   </footer>
 
+  <!-- CHATBOT -->
   <button class="chatbot-toggle" id="chatbotToggle">💬</button>
 
   <div class="chatbot-box" id="chatbotBox">
     <div class="chatbot-header">
-      <h3>SparkFluxx Assistant</h3>
+      <h3>SparkFluxx AI Assistant</h3>
       <button class="chatbot-close" id="chatbotClose">✕</button>
     </div>
 
@@ -897,6 +873,7 @@
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
 
+    // CHATBOT
     const chatbotToggle = document.getElementById('chatbotToggle');
     const chatbotBox = document.getElementById('chatbotBox');
     const chatbotClose = document.getElementById('chatbotClose');
